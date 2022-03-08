@@ -2,6 +2,8 @@ package com.rohfl.mvp.presenter;
 
 import com.rohfl.mvp.interfaces.Mvp;
 
+import javax.inject.Inject;
+
 /**
  * Created by Rohit Jangid on 08/03/2022
  */
@@ -9,7 +11,7 @@ public class Presenter implements Mvp.Presenter{
 
     Mvp.View view;
 
-    public Presenter(){};
+    @Inject public Presenter(){};
 
     @Override
     public void takeView(Mvp.View view) {

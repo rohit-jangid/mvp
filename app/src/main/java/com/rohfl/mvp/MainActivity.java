@@ -10,9 +10,14 @@ import android.widget.TextView;
 import com.rohfl.mvp.interfaces.Mvp;
 import com.rohfl.mvp.presenter.Presenter;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity implements Mvp.View{
 
-    Mvp.Presenter presenter;
+    @Inject Mvp.Presenter presenter;
     TextView tv;
     Button btn;
 
@@ -20,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements Mvp.View{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        presenter = new Presenter();
+
         presenter.takeView(this);
 
         tv = findViewById(R.id.tv);
